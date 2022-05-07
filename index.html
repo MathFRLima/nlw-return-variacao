@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thai Store</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navigation">
+      <div class="wrapper">
+        <a class="logo" href="#home">
+          <img src="./assets/img/logo-correta.png" alt="logo" />
+        </a>
+
+        <div class="menu">
+          <ul>
+            <li>
+              <a class="active" onclick="closeMenu()" href="#home">Início</a>
+            </li>
+            <li><a onclick="closeMenu()" href="#products">Produtos</a></li>
+            <li><a onclick="closeMenu()" href="#about">Sobre</a></li>
+          </ul>
+          <a class="button" onclick="closeMenu() " href="#contact"
+            >Faça seu pedido</a
+          >
+          <ul class="social-links">
+            <li>
+              <a target="_blank" href="instagram">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 1.99997 17 1.99997Z"
+                    stroke="#FFFAF1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z"
+                    stroke="#FFFAF1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17.5 6.49997H17.51"
+                    stroke="#FFFAF1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="facebook">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 1.99997H15C13.6739 1.99997 12.4021 2.52675 11.4645 3.46444C10.5268 4.40212 10 5.67389 10 6.99997V9.99997H7V14H10V22H14V14H17L18 9.99997H14V6.99997C14 6.73475 14.1054 6.4804 14.2929 6.29286C14.4804 6.10533 14.7348 5.99997 15 5.99997H18V1.99997Z"
+                    stroke="#FFFAF1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="twitter">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8 3C9.10457 3 10 3.89543 10 5V8H16C17.1046 8 18 8.89543 18 10C18 11.1046 17.1046 12 16 12H10V14C10 15.6569 11.3431 17 13 17H16C17.1046 17 18 17.8954 18 19C18 20.1046 17.1046 21 16 21H13C9.13401 21 6 17.866 6 14V5C6 3.89543 6.89543 3 8 3Z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <button
+          aria-expanded="false"
+          aria-label="Abrir menu"
+          class="open-menu"
+          onclick="openMenu()"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 20H30"
+              stroke="#00856F"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 12H30"
+              stroke="#00856F"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M18 28L30 28"
+              stroke="#00856F"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <button
+          aria-expanded="true"
+          aria-label="Fechar menu"
+          class="close-menu"
+          onclick="closeMenu()"
+        >
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M30 10L10 30M10 10L30 30"
+              stroke="#FFFAF1"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <section id="home">
+      <div class="wrapper">
+        <div class="col-a">
+          <header>
+            <h4>BEM-VINDAS A ThaiStore</h4>
+            <h1>Loja de roupas femininas</h1>
+          </header>
+          <div class="content">
+            <p class="header-text">
+              Promoção imperdível: o produto mais vendido da nossa loja com X%
+              de desconto!
+            </p>
+            <a class="button" href="#contact">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.8337 10.6667C12.667 10.5833 11.5837 10.0833 11.417 10C11.2503 9.91668 11.0837 9.91668 10.917 10.0833C10.7503 10.25 10.417 10.75 10.2503 10.9167C10.167 11.0833 10.0003 11.0833 9.83366 11C9.25033 10.75 8.66699 10.4167 8.16699 10C7.75033 9.58334 7.33366 9.08334 7.00033 8.58334C6.91699 8.41668 7.00033 8.25001 7.08366 8.16668C7.16699 8.08334 7.25033 7.91668 7.41699 7.83334C7.50033 7.75001 7.58366 7.58334 7.58366 7.50001C7.66699 7.41668 7.66699 7.25001 7.58366 7.16668C7.50033 7.08334 7.08366 6.08334 6.91699 5.66668C6.83366 5.08334 6.66699 5.08334 6.50033 5.08334C6.41699 5.08334 6.25033 5.08334 6.08366 5.08334C5.91699 5.08334 5.66699 5.25001 5.58366 5.33334C5.08366 5.83334 4.83366 6.41668 4.83366 7.08334C4.91699 7.83334 5.16699 8.58334 5.66699 9.25001C6.58366 10.5833 7.75033 11.6667 9.16699 12.3333C9.58366 12.5 9.91699 12.6667 10.3337 12.75C10.7503 12.9167 11.167 12.9167 11.667 12.8333C12.2503 12.75 12.7503 12.3333 13.0837 11.8333C13.2503 11.5 13.2503 11.1667 13.167 10.8333C13.167 10.8333 13.0003 10.75 12.8337 10.6667ZM14.917 3.08334C11.667 -0.166656 6.41699 -0.166656 3.16699 3.08334C0.500325 5.75001 0.000325501 9.83334 1.83366 13.0833L0.666992 17.3333L5.08366 16.1667C6.33366 16.8333 7.66699 17.1667 9.00033 17.1667C13.5837 17.1667 17.2503 13.5 17.2503 8.91668C17.3337 6.75001 16.417 4.66668 14.917 3.08334ZM12.667 14.75C11.5837 15.4167 10.3337 15.8333 9.00033 15.8333C7.75033 15.8333 6.58366 15.5 5.50033 14.9167L5.25033 14.75L2.66699 15.4167L3.33366 12.9167L3.16699 12.6667C1.16699 9.33334 2.16699 5.16668 5.41699 3.08334C8.66699 1.00001 12.8337 2.08334 14.8337 5.25001C16.8337 8.50001 15.917 12.75 12.667 14.75Z"
+                  fill="white"
+                />
+              </svg>
+              Faça seu pedido
+            </a>
+          </div>
+        </div>
+
+        <div class="col-b">
+          <img
+            class="header-img"
+            src="./assets/img/mulher-negra-de-biquini-amarelo.png"
+            alt="Mulher negra vestindo moletom verde e sorrindo"
+          />
+        </div>
+
+        <div class="estatisticas">
+          <div class="box-1 box">
+            <h3 class="box-title">100%</h3>
+            <p class="box-text">Qualidade</p>
+          </div>
+          <div class="box-2 box">
+            <h3 class="box-title">100%</h3>
+            <p class="box-text">Conforto</p>
+          </div>
+          <div class="box-3 box">
+            <h3 class="box-title">100%</h3>
+            <p class="box-text">Linda</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrapper">
+        <header>
+          <h4>Produtos</h4>
+          <h2>Diva não gasta dinheiro, diva faz investimento!</h2>
+        </header>
+        <div class="produtos">
+          <div class="produtos__itens">
+            <div class="produtos__info">
+              <div class="produtos__cabecalho">
+                <h2 class="produtos__titulo">Moda praia</h2>
+                <a href="#" class="produtos__vermais"
+                  >Ver mais
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
+                      fill="currentColor"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+            <div class="produtos__conteudo">
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/top-floral.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Top floral</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/top-floral.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Top floral</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/top-floral.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Top floral</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/top-floral.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Top floral</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/top-floral.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Top floral</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="produtos__itens">
+            <div class="produtos__info">
+              <div class="produtos__cabecalho">
+                <h2 class="produtos__titulo">Lingerie</h2>
+                <a href="#" class="produtos__vermais"
+                  >Ver mais
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
+                      fill="currentColor"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+            <div class="produtos__conteudo">
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/roupa-confortavel.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Conjunto de dormir</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/roupa-confortavel.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Conjunto de dormir</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/roupa-confortavel.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Conjunto de dormir</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/roupa-confortavel.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Conjunto de dormir</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/roupa-confortavel.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">Conjunto de dormir</h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="produtos__itens">
+            <div class="produtos__info">
+              <div class="produtos__cabecalho">
+                <h2 class="produtos__titulo">Roupas</h2>
+                <a href="#" class="produtos__vermais"
+                  >Ver mais
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.0677 11.9929L18.818 7.75739L17.4061 9.17398L19.2415 11.0032L0.932469 11.0012L0.932251 13.0012L19.2369 13.0032L17.4155 14.8308L18.8321 16.2426L23.0677 11.9929Z"
+                      fill="currentColor"
+                    /></svg
+                ></a>
+              </div>
+            </div>
+            <div class="produtos__conteudo">
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/vestido.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">
+                    Vestido vermelho de bolinhas
+                  </h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/vestido.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">
+                    Vestido vermelho de bolinhas
+                  </h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/vestido.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">
+                    Vestido vermelho de bolinhas
+                  </h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/vestido.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">
+                    Vestido vermelho de bolinhas
+                  </h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+              <div class="produtos__card">
+                <img
+                  src="./assets/img/produtos/vestido.jpg"
+                  alt=""
+                  class="card__img"
+                />
+                <div class="card__corpo">
+                  <h3 class="card__corpo--titulo">
+                    Vestido vermelho de bolinhas
+                  </h3>
+                  <p class="card__corpo--valor">R$ 50,00</p>
+                  <a href="#" class="card__corpo--vermais">Ver produto</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrapper">
+        <div class="col-a">
+          <header>
+            <h4>SOBRE NÓS</h4>
+            <h2>Entenda quem somos e por que existimos</h2>
+          </header>
+          <div class="content">
+            <p>
+              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Velit officia consequat duis enim. Amet minim mollit
+              non deserunt ullamco est sit aliqua dolor do amet sint. Velit
+              officia consequat duis enim. Amet minim mollit non deserunt
+              ullamco est sit aliqua dolor do amet sint. Velit officia consequat
+              duis enim. Amet minim mollit non deserunt ullamco est sit aliqua
+              dolor do amet sint. Velit officia consequat duis enim. Amet minim
+              mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-b">
+          <img
+            src="./assets/img/quem-somos.jpg"
+            alt="Doutor feliz segurando prancheta com pacientes"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrapper">
+        <div class="col-a">
+          <header>
+            <h2>Entre em contato com a gente!</h2>
+          </header>
+          <div class="content">
+            <ul>
+              <li>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"
+                    stroke="#00856F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                    stroke="#00856F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                R. Amauri Souza, 346
+              </li>
+              <li>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                    stroke="#00856F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M22 6L12 13L2 6"
+                    stroke="#00856F"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                contato@thaistore.com
+              </li>
+            </ul>
+            <a
+              class="button"
+              href="https://wa.me/5599911112222"
+              target="_blank"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.8337 10.6667C12.667 10.5833 11.5837 10.0833 11.417 10C11.2503 9.91668 11.0837 9.91668 10.917 10.0833C10.7503 10.25 10.417 10.75 10.2503 10.9167C10.167 11.0833 10.0003 11.0833 9.83366 11C9.25033 10.75 8.66699 10.4167 8.16699 10C7.75033 9.58334 7.33366 9.08334 7.00033 8.58334C6.91699 8.41668 7.00033 8.25001 7.08366 8.16668C7.16699 8.08334 7.25033 7.91668 7.41699 7.83334C7.50033 7.75001 7.58366 7.58334 7.58366 7.50001C7.66699 7.41668 7.66699 7.25001 7.58366 7.16668C7.50033 7.08334 7.08366 6.08334 6.91699 5.66668C6.83366 5.08334 6.66699 5.08334 6.50033 5.08334C6.41699 5.08334 6.25033 5.08334 6.08366 5.08334C5.91699 5.08334 5.66699 5.25001 5.58366 5.33334C5.08366 5.83334 4.83366 6.41668 4.83366 7.08334C4.91699 7.83334 5.16699 8.58334 5.66699 9.25001C6.58366 10.5833 7.75033 11.6667 9.16699 12.3333C9.58366 12.5 9.91699 12.6667 10.3337 12.75C10.7503 12.9167 11.167 12.9167 11.667 12.8333C12.2503 12.75 12.7503 12.3333 13.0837 11.8333C13.2503 11.5 13.2503 11.1667 13.167 10.8333C13.167 10.8333 13.0003 10.75 12.8337 10.6667ZM14.917 3.08334C11.667 -0.166656 6.41699 -0.166656 3.16699 3.08334C0.500325 5.75001 0.000325501 9.83334 1.83366 13.0833L0.666992 17.3333L5.08366 16.1667C6.33366 16.8333 7.66699 17.1667 9.00033 17.1667C13.5837 17.1667 17.2503 13.5 17.2503 8.91668C17.3337 6.75001 16.417 4.66668 14.917 3.08334ZM12.667 14.75C11.5837 15.4167 10.3337 15.8333 9.00033 15.8333C7.75033 15.8333 6.58366 15.5 5.50033 14.9167L5.25033 14.75L2.66699 15.4167L3.33366 12.9167L3.16699 12.6667C1.16699 9.33334 2.16699 5.16668 5.41699 3.08334C8.66699 1.00001 12.8337 2.08334 14.8337 5.25001C16.8337 8.50001 15.917 12.75 12.667 14.75Z"
+                  fill="white"
+                />
+              </svg>
+              Faça seu pedido
+            </a>
+          </div>
+        </div>
+        <div class="col-b">
+          <img
+            src="./assets/img/mulher-negra-sentada-usando-celular.jpg"
+            alt="Homem negro vestindo bege mexendo no celular e sorrindo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrapper">
+        <div class="col-a">
+          <a class="logo" href="#home">
+            <img src="./assets/img/logo-correta.png" alt="logo" href="#home" />
+          </a>
+          <p>
+            ©2022 ThaiStore.<br />
+            Todos os direitos reservados.
+          </p>
+        </div>
+
+        <div class="col-b">
+          <ul class="social-links">
+            <li>
+              <a target="_blank" href="instagram">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 1.99997 17 1.99997Z"
+                    stroke="#FFFAF1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z"
+                    stroke="#FFFAF1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M17.5 6.49997H17.51"
+                    stroke="#FFFAF1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="facebook">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18 1.99997H15C13.6739 1.99997 12.4021 2.52675 11.4645 3.46444C10.5268 4.40212 10 5.67389 10 6.99997V9.99997H7V14H10V22H14V14H17L18 9.99997H14V6.99997C14 6.73475 14.1054 6.4804 14.2929 6.29286C14.4804 6.10533 14.7348 5.99997 15 5.99997H18V1.99997Z"
+                    stroke="#FFFAF1"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href="twitter">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8 3C9.10457 3 10 3.89543 10 5V8H16C17.1046 8 18 8.89543 18 10C18 11.1046 17.1046 12 16 12H10V14C10 15.6569 11.3431 17 13 17H16C17.1046 17 18 17.8954 18 19C18 20.1046 17.1046 21 16 21H13C9.13401 21 6 17.866 6 14V5C6 3.89543 6.89543 3 8 3Z"
+                    fill="white"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <a id="backToTopButton" class="show white" href="#home">
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="20" cy="20" r="20" fill="#00856F" />
+        <path
+          d="M20 27V13"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M13 20L20 13L27 20"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </a>
+
+    <!--ScrollReaveal lib-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
